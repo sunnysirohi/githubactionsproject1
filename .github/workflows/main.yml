@@ -1,12 +1,20 @@
 on:
   push
 
+permissions:
+  pull-requests: write
+  contents: write
+  repository-projects: write
+
 jobs:
   display_output:
-    name: Run a simple commmand
+    name: display a file
     runs-on: ubuntu-latest
     steps:
-      - name: Display the output
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Display the output of the file
         run: |
-          echo "This is my first workflow"
+          cat test.txt
         shell: bash
