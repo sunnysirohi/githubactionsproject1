@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-latest
     #needs: job1-display_output        # for sequential jobs
     environment: course
-    env:
-      name: "Harry"
+    #env:
+    #  name: "Harry"
     steps:
       - name: job2-Display the content
         run: |
-          echo "This name is $name"
+          #echo "This name is $name"
           echo "The topic is ${{ env.topic }}"
         shell: bash
