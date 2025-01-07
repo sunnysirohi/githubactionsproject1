@@ -34,5 +34,5 @@ jobs:
           echo "This name is $name"
           echo "The topic is ${{ vars.topic }}"
           echo "The password is ${{ secrets.password }}"
-          echo "This is job2. The output is coming from job1 - ${{ needs.job1-display_output.job1_output }}"
+          echo "This is job2. The output is coming from job1 - ${{ needs.job1-display_output.outputs.job1_output }}"
         shell: bash
