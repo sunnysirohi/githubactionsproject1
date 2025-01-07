@@ -1,20 +1,24 @@
 on:
   push
 
-permissions:
-  pull-requests: write
-  contents: write
-  repository-projects: write
-
 jobs:
-  display_output:
+  job1-display_output:
     name: display a file
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         
-      - name: Display the output of the file
+      - name: job1-Display the output of the file
         run: |
           cat test.txt
+        shell: bash
+
+  job2-display_output:
+    name: display the content
+    runs-on: ubuntu-latest
+    steps:
+      - name: job2-Display the content
+        run: |
+          echo "This is job 2"
         shell: bash
