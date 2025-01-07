@@ -30,7 +30,7 @@ jobs:
     if: success()
     steps:
       - name: Display the output
-        run: echo "This job is running since previous job has executed successfully.
+        run: echo "This job is running since previous job has executed successfully."
          
 
   job2-display_output:
