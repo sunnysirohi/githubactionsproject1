@@ -13,7 +13,7 @@ jobs:
         
       - name: job1-Display the output of the file
         run: |
-          cat test1.txt
+          cat test.txt
         shell: bash
 
       - name: Output for job 2
@@ -22,7 +22,7 @@ jobs:
           echo "::set-output name=mystring::This is job1 output"
     
     outputs:
-      job1_output: ${{ steps.myoutput.outputs.mystring1 }}
+      job1_output: ${{ steps.myoutput.outputs.mystring }}
 
   conditional_job_success:
     name: Conditional Job for Success
