@@ -17,7 +17,7 @@ jobs:
         run: |
           if [[ "${{ github.event.head_commit.message }}" == *"conditions"* ]]; then
             echo "Condition does match."
-            echo "::set-output name=check_success:true"
+            echo "::set-output name=check_success::true"
           else
             echo "Condition does not match."
             echo "::set-output name=check_success::false"
