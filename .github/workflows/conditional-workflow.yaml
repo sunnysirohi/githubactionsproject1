@@ -22,27 +22,3 @@ jobs:
             echo "Condition does not match."
             echo "success=false" >> $GITHUB_ENV
           fi
-
-  job2-success:
-    runs-on: ubuntu-latest
-    needs: check-commit-message
-    if: $success == "true"
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run a check
-        run: |
-          echo "This is running as 'check_commit_message' successfully executed.
-
-  job3-failure:
-    runs-on: ubuntu-latest
-    needs: check-commit-message
-    if: $success == "false"
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run a check
-        run: |
-          echo "This is running as 'check_commit_message' and was not successfully executed.
