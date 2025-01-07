@@ -16,7 +16,7 @@ jobs:
         id: check_message
         run:  |
           if [[ "${{ github.event.head_commit.message }}" == *"conditions"* ]]; then
-            echo Condition matches
+            echo Condition does match.
           else
-            echo Condition does not match
+            echo Condition does not match.
           fi
