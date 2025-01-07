@@ -17,9 +17,11 @@ jobs:
   job2-display_output:
     name: display the content
     runs-on: ubuntu-latest
-    needs: job1-display_output        # for sequential jobs
+    #needs: job1-display_output        # for sequential jobs
+    env:
+      name: "Harry"
     steps:
       - name: job2-Display the content
         run: |
-          echo "This is job 2"
+          echo "This name is $name"
         shell: bash
