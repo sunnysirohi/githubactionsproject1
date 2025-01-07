@@ -26,4 +26,5 @@ jobs:
         run: |
           echo "This name is $name"
           echo "The topic is ${{ vars.topic }}"
+          echo "The topic is ${{ secrets.password }}"
         shell: bash
