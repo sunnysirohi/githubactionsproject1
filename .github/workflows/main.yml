@@ -13,7 +13,7 @@ jobs:
         
       - name: job1-Display the output of the file
         run: |
-          cat test.txt
+          cat test1.txt
         shell: bash
 
       - name: Output for job 2
@@ -22,16 +22,23 @@ jobs:
           echo "::set-output name=mystring::This is job1 output"
     
     outputs:
-      job1_output: ${{ steps.myoutput.outputs.mystring }}
+      job1_output: ${{ steps.myoutput.outputs.mystring1 }}
 
-  conditional_job:
-    name: Conditional Job
+  conditional_job_success:
+    name: Conditional Job for Success
     runs-on: ubuntu-latest
     if: success()
     steps:
       - name: Display the output
         run: echo "This job is running since previous job has executed successfully."
-         
+
+  conditional_job_failure:
+    name: Conditional Job for Failure
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Display the output
+        run: echo "This job is running since previous job has failed."
 
   job2-display_output:
     name: display the content
