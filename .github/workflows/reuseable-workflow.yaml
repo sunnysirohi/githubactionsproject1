@@ -7,7 +7,7 @@ on:
 
 jobs:
   job_for_main:
-    runs-on: ubtunut-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Display the output on main workflow
         run: echo "This is a message called from reusable workflow - ${{ inputs.message }}"
