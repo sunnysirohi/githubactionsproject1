@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+    inputs:
+      message:
+        required: true
+        type: string
+
+jobs:
+  job_for_main:
+    runs-on: ubtunut-latest
+    steps:
+      - name: Display the output on main workflow
+        run: echo "This is a message called from reusable workflow - ${{ inputs.message }}"
