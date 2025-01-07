@@ -25,5 +25,5 @@ jobs:
       - name: job2-Display the content
         run: |
           echo "This name is $name"
-          echo "The topic is ${{ topic }}"
+          echo "The topic is ${{ vars.topic }}"
         shell: bash
