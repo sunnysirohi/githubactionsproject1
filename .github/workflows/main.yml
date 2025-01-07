@@ -16,7 +16,8 @@ jobs:
 
       - name: Output for job 2
         id: myoutput
-        run: echo "::set-output name=mystring::This is job1 output"
+        run: |
+          echo "::set-output name=mystring::This is job1 output"
     
     outputs:
       job1_output: ${{ steps.myoutput.outputs.mystring }}
@@ -36,3 +37,8 @@ jobs:
           echo "The password is ${{ secrets.password }}"
           echo "This is job2. The output is coming from job1 - ${{ needs.job1-display_output.outputs.job1_output }}"
         shell: bash
+
+  call-reusable-workflow:
+    uses: ./.github/workflows/reuseable-workflow.yaml
+    with:
+      message: "This is the main workflow."
