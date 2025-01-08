@@ -11,7 +11,7 @@ jobs:
       - name: Get commit message
         id: commit_message
         run: |
-          echo "Commit message: ${{ github.event.head_commit.message }}"
+          echo "Commit message: ${{ github.event.head_commit.message }}" 
 
       - name: Check if the commit message contains "conditions"
         id: check_message
